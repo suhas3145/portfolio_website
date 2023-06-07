@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Map from './Map';
 
 
 const Section =styled.div`
@@ -97,7 +98,11 @@ const Contact = () => {
           <Button type="submit">Send</Button>
         </Form>
       </Left>
-      <Right></Right>
+      <Right>
+
+         <Map/>
+
+      </Right>
       </Container>
     </Section>
   )
