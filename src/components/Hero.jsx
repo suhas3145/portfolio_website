@@ -1,6 +1,8 @@
+
 import React from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
+
 
 
 const Section =styled.div`
@@ -114,6 +116,8 @@ const Hero = () => {
         </Left>
 
         <Right>
+
+        
             
            <Imagee src="./img/moon.png"/>
         </Right>

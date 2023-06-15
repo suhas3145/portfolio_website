@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
 
+
 const Container =styled.div`
    height:100vh;
    scroll-snap-type:y mandatory;
@@ -27,6 +28,7 @@ function App() {
       <Who/>
       <Works/>
       <Contact/>
+   
     </Container>
   );
 }

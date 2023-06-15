@@ -5,7 +5,6 @@ import {
   Geographies,
   Geography,
   Annotation,
-  ZoomableGroup
 } from "react-simple-maps";
 
 const Map = () => {
