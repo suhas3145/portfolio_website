@@ -1,29 +1,34 @@
+import React, { Suspense } from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
 
-import React from 'react'
-import styled from 'styled-components'
-import Navbar from './Navbar'
+const Section = styled.div`
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-
-
-const Section =styled.div`
-   height:100vh;
-   scroll-snap-align:center;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-between;
-`
-
-const Container = styled.div`
-       height : 100vh;
-       scroll-snap-align: center;
-       width:1400px;
-       display: flex;
-       justify-content: space-between;
-
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 
+const Container = styled.div`
+  height: 100%;
+  scroll-snap-align: center;
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
 
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 const Left = styled.div`
   flex: 2;
@@ -31,32 +36,44 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+  }
 `;
 
-const Title = styled.div`
-    font-size: 74px;
+const Title = styled.h1`
+  font-size: 74px;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
-
-const WhatWeDO = styled.h1`
-     display: flex;
-     align-items: center;
-     gap: 10px;
-
-
-`;
-const Line = styled.div`
-    height: 5px;
+const WhatWeDo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
-
-const Subtitle=styled.h2`
-    color: #da4ea2;
+const Line = styled.img`
+  height: 5px;
 `;
+
+const Subtitle = styled.h2`
+  color: #da4ea2;
+`;
+
 const Desc = styled.p`
-     font-size: 24px;
-     color: lightgray;
+  font-size: 24px;
+  color: lightgray;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
 `;
+
 const Button = styled.button`
   background-color: #da4ea2;
   color: white;
@@ -69,12 +86,15 @@ const Button = styled.button`
 `;
 
 const Right = styled.div`
-    flex:3;
-    position: relative;
-
+  flex: 3;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
 `;
 
-const Imagee =styled.img`
+const Img = styled.img`
   width: 800px;
   height: 600px;
   object-fit: contain;
@@ -86,44 +106,41 @@ const Imagee =styled.img`
   margin: auto;
   animation: animate 2s infinite ease alternate;
 
-  @keyframes animate{
-    to{
-      transform: translateX(25px);
-    }
-
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
   }
 
-
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  }
 `;
-
-
-
 
 const Hero = () => {
   return (
     <Section>
-      <Navbar/>
+      <Navbar />
       <Container>
-
         <Left>
           <Title>Think. Make. Solve.</Title>
-          <WhatWeDO>
-            <Line src="./img/line.png"/>
-            <Subtitle>What we do</Subtitle>
-          </WhatWeDO>
-          <Desc>We enjoy creating delightful , human-centered digital experiences.</Desc>
+          <WhatWeDo>
+            <Line src="./img/line.png" />
+            <Subtitle>What we Do</Subtitle>
+          </WhatWeDo>
+          <Desc>
+            we enjoy creating delightful, human-centered digital experiences.
+          </Desc>
           <Button>Learn More</Button>
         </Left>
-
         <Right>
-
-        
-            
-           <Imagee src="./img/moon.png"/>
+          
+          <Img src="./img/moon.png" />
         </Right>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

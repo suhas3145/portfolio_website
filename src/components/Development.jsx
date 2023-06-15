@@ -2,7 +2,7 @@ import React from "react";
 import { OrbitControls ,Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Atom from "./Atom";
-import styled from "styled-components";
+
 
 
 const Development = () => {
